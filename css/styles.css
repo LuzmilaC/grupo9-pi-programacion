@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 /*Estilos Header y generos*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 body{
     background-color: #030303;
     font-family: bebas neue ;
@@ -48,6 +49,11 @@ header img{
     width: 50%;
     display: flex;
     justify-content: end;
+    
+    align-items: center;
+    display: flex;
+    justify-content: end;
+    width: 50%;
 }
 .barrabusqueda form {
     display: flex;
