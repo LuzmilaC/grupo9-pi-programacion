@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
 body{
-    background-color: rgb(0, 0, 0);
+    background-color: #030303;
+    font-family: bebas neue ;
 }
 header{
     display: flex;
@@ -208,3 +212,43 @@ footer img{
         height: 100vh;
     }
 }
+/*estilo main de index y detalles*/
+
+.movieConteiner,
+.serieConteiner,
+.seriesVaoradasConteiner,
+.detalleGeneroContenedor {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%; 
+}
+
+.movie,
+.series,
+.serieVlorada,
+.detalleGenero {
+    width: 18%;
+    text-align: center;
+    margin: 0 5px;
+        
+}
+.imgpeli,
+.imgSerie,
+.imgSerieV,
+.imgDetalleGenero {
+    width: 100%;
+    height: auto;
+}
+/*titulos de index y detalles*/
+.pp,
+.sp,
+.sv,
+.dg {
+    color: white;
+}
+
+
+
