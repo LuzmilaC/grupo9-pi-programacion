@@ -206,7 +206,7 @@ footer img{
     font-weight: bolder;
 }
 
-/*Para Table*/
+/*Para Celular*/
 @media (max-width:420px){
     .objetosheader{
         height: 10vh;
