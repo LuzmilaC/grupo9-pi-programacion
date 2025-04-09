@@ -301,6 +301,7 @@ footer img{
 
 
 /*Para Table*/
+/*Para Table*/
 @media (max-width:768px){
     .generos h2 a:hover::after {
         transform: scale(0);
@@ -453,4 +454,6 @@ footer img{
 
 .info-peliculaSerie h2{
     color: white;
+=======
+>>>>>>> 9f6300a0dc069e7ba912bc51c0a3c920e24adc9b
 }
