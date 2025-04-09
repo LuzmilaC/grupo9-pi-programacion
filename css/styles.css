@@ -355,3 +355,17 @@ footer img{
     margin-right: 2%;
     padding: 0.6%;
 }
+
+/*detalle de peliculas y series*/
+.detalle-peliculaSerie{
+    width: 100%;
+    height: auto;
+}
+
+.info-peliculaSerie p{
+    color: white;
+}
+
+.info-peliculaSerie h2{
+    color: white;
+}
