@@ -300,8 +300,70 @@ footer img{
 }
 
 
+/*Para Table*/
+@media (max-width:768px){
+    .generos h2 a:hover::after {
+        transform: scale(0);
+      }
+    .texttitulo:hover::after {
+        transform: scale(0);
+      }
+    .nombres p{
+        font-size: 50%;
+    }
+    .redes{
+        width: 100px;
+    }
+    .logo{
+        width: 9%;
+        height: 55%;
+    }
+    header{
+        width: 100%;
+        height: 15vh;
+    }
+    header img{
+        width: 3%;
+        height: 20%;
+    }
+    footer{
+        width: 100%;
+        height: 15vh;
+    }
+    footer img{
+        width: 100%;
+        height: 25%;
+    }
+    .texttitulo{
+        font-size: 50%;
+    }
+    .barrabusqueda{
+        width: 33%;
+      }
+    .barrabusqueda form{
+        height: 5vh;
+      }  
+    .barrabusqueda input{
+        width: 80%;
+        font-size: 50%;
+        height: 2.7vh;
+      }
+    .barrabusqueda button{
+        height: 20%;
+        width: 20%;
+        padding-left: 0%;
+    }
+    .barrabusqueda button img {
+        width: 120%;
+        height: 320%;
+    }
+    .cuerpogeneros{
+        height: 100vh;
+    }
+}
+
 /*estilos para celular*/
-@media (max-width: 420px) {
+@media (max-width: 420px){
 .movieConteiner,
 .serieConteiner,
 .seriesVaoradasConteiner,
@@ -340,21 +402,8 @@ footer img{
     text-decoration: none;
     margin-right: 2%;
     padding: 0.6%;
-}
+}}
 
-/*detalle de peliculas y series*/
-.detalle-peliculaSerie{
-    width: 100%;
-    height: auto;
-}
-
-.info-peliculaSerie p{
-    color: white;
-}
-
-.info-peliculaSerie h2{
-    color: white;
-}
 /*Login y register*/
 .login{
     color: white;
@@ -404,4 +453,6 @@ footer img{
 
 .info-peliculaSerie h2{
     color: white;
+=======
+>>>>>>> 9f6300a0dc069e7ba912bc51c0a3c920e24adc9b
 }
