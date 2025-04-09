@@ -254,7 +254,7 @@ footer img{
 }
 
 
-/*Para Table*/
+/*Para Tablet*/
 @media (max-width:768px){
     .generos h2 a:hover::after {
         transform: scale(0);
@@ -317,7 +317,7 @@ footer img{
 }
 
 /*estilos para celular*/
-@media (max-width: 420px) {
+@media (max-width: 420px){
 .movieConteiner,
 .serieConteiner,
 .seriesVaoradasConteiner,
@@ -346,7 +346,6 @@ footer img{
     display: block;
     margin: 0 auto;
 }
-<<<<<<< HEAD
 
 .button-formularios{
     background-color: grey;
@@ -357,6 +356,43 @@ footer img{
     text-decoration: none;
     margin-right: 2%;
     padding: 0.6%;
+}}
+
+/*Login y register*/
+.login{
+    color: white;
+    text-align: center;
+}
+
+.register{
+    color: white;
+    text-align: center;
+}
+
+.formulario-login{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formulario-register{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.button-formularios{
+    background-color: grey;
+    color: white;
+    width: 10%;
+    height: 5%;
+    margin: 2px;
+}
+
+.checkbox{
+    color: white;
 }
 
 /*detalle de peliculas y series*/
@@ -371,6 +407,4 @@ footer img{
 
 .info-peliculaSerie h2{
     color: white;
-=======
->>>>>>> 9f6300a0dc069e7ba912bc51c0a3c920e24adc9b
 }
