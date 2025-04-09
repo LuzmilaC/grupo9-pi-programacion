@@ -329,3 +329,29 @@ footer img{
     text-align: center;
     justify-content: center;
 }
+
+.register{
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+
+.formulario-register{
+    text-align: center;
+    justify-content: center;
+}
+
+.checkbox{
+    color: white;
+}
+
+.button-formularios{
+    background-color: grey;
+    color: white;
+    width: 10%;
+    margin-top: 10%;
+    height: 5%;
+    text-decoration: none;
+    margin-right: 2%;
+    padding: 0.6%;
+}
