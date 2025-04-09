@@ -318,5 +318,14 @@ footer img{
     color: white;
 }
 
+/*estilos formulario*/
+.login{
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
 
-
+.formulario-login{
+    text-align: center;
+    justify-content: center;
+}
