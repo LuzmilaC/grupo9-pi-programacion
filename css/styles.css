@@ -335,11 +335,10 @@ footer img{
     background-color: grey;
     color: white;
     width: 10%;
-    margin-top: 10%;
     height: 5%;
+    margin: 2px;
     text-decoration: none;
-    margin-right: 2%;
-    padding: 0.6%;
+    text-align: center;
 }}
 
 /*Login y register*/
