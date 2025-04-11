@@ -82,7 +82,7 @@ header{
     padding-left: 0%;
 }
 .logo{
-    width: 90%;
+    width: 85%;
     height: 100%;
     padding-left:1% ;
 }
@@ -405,11 +405,11 @@ footer{
         flex-direction: column;
     }
     header{
-        height: 43vh;
+        height: 45vh;
         flex-direction: column;
     }
     .objetosHeader{
-        height: 30vh;
+        height: 33vh;
         width: 90%;
         flex-direction: column;
     }
