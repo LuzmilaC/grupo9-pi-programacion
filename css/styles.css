@@ -146,6 +146,7 @@ footer img{
     width: 100%;
     height: 15vh;
     align-items: center;
+    margin-bottom: 0;
 }
 .cuerpoGeneros{
     background-color: white;
@@ -295,6 +296,7 @@ footer img{
     width: 10%;
     height: 5%;
     margin: 2px;
+    text-decoration: none;
 }
 
 .checkbox{
@@ -303,6 +305,10 @@ footer img{
 
 .main-loginRegister{
     margin-bottom: 100%;
+}
+
+.margin-btn{
+    margin-top: 3px;
 }
 
 /*detalle de peliculas y series*/
@@ -350,7 +356,11 @@ footer img{
     }
     footer{
         width: 100%;
-        height: 10vh;
+        height: 15vh;
+        align-items: center;
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
     }
     footer img{
         width: 100%;
@@ -455,9 +465,8 @@ footer img{
 
 
 /*detalle de peliculas y series*/
-.detalle-peliculaSerie, .img-peliculaSerie{
-    width: 100%;
-    height: auto;
+.img-peliculaSerie{
+    width: 420px;
 }
 
 .info-peliculaSerie p{
@@ -474,5 +483,14 @@ footer img{
     width: 10%;
     height: 5%;
     text-decoration: none;
+}
+
+/*Login y register*/
+.main-loginRegister{
+    margin-bottom: 75vh;
+}
+
+.margin-btn{
+    margin-top: 3px;
 }
 }
