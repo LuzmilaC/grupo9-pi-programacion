@@ -8,6 +8,11 @@
 body{
     background-color: #030303;
     font-family: bebas neue ;
+    margin: 0;
+}
+.puntosHeader{
+    display: none;
+    height: 15vh;
 }
 header{
     display: flex;
