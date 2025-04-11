@@ -1,5 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+* {
+    box-sizing: border-box
+}
+
 /*Estilos Header y generos*/
 body{
     background-color: #030303;
@@ -187,9 +191,79 @@ footer img{
     border-color: gray;
     font-weight: bolder;
 }
+.info-peliculaSerie {
+    color: white;
+}
 
-/*Para Celular*/
-@media (max-width:420px){
+/*estilo main de index y detalles de genero*/
+
+/*pelicula principal*/
+.peliculaPrincipalContenedor {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+   
+}  
+.peliculaPrincipal {
+    width: 100%;
+    height: auto;
+    display: block;
+} 
+.contenidoTexto {
+    position: absolute;
+    font-size: 1.5rem;
+    width: 50%;
+    color: white;
+}
+.mas {
+    background-color: rgba(197, 32, 32, 0.8);
+    padding: 7px 20px;
+    display: inline-block;
+}
+.tt {
+    font-size: 4.5rem;
+    color: rgba(197, 32, 32, 0.6);
+    ;
+
+}
+/*categorias de peliculas-series*/
+.conteinerPost {
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%; 
+}
+
+.post {
+    width: 18%;
+    text-align: center;
+    margin: 0 5px;
+    padding-top: 20px;
+        
+}
+.imgPost {
+    width: 100%;
+    height: auto;
+}
+/*titulos de index y detalles de genero*/
+.pp,
+.sp,
+.sv,
+.dg {
+    color: white;
+    padding-bottom: 20px ;
+    width: 59%;
+    border-bottom: solid 1px #c52020 ;  
+}
+
+
+/*estilos para celular*/
+
+@media (max-width: 420px){
     .cuerpoHeader{
         height: 10vh;
     }
@@ -264,85 +338,47 @@ footer img{
     .generos h2{
         font-size: 100%;
     }
+    
+
+/*estilo pelicula principal*/
+
+.tt {
+    font-size: 1.5rem;
+    color: rgba(197, 32, 32, 0.7);
+       margin: 0;
 }
 
-/*estilo main de index y detalles de genero*/
-
-.movieConteiner,
-.serieConteiner,
-.seriesValoradasConteiner,
-.detalleGeneroPeliContenedor,
-.detalleGeneroSerieContenedor {
-    color: white;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%; 
+.contenidoTexto {
+    width: 70%;
+      font-size: 0.7rem;
+      color: rgba(255, 255, 255, 0.6);
 }
+.mas {
+    padding: 4px 10px;
+    font-size: 0.7rem;
+    background-color: rgba(197, 32, 32, 0.6);
 
-.movie,
-.series,
-.serieVlorada,
-.detalleGeneroPeli,
-.detalleGeneroSerie {
-    width: 18%;
-    text-align: center;
-    margin: 0 5px;
-    padding-top: 20px;
-        
 }
-.imgpeli,
-.imgSerie,
-.imgSerieV,
-.imgDetalleGeneroPeli,
-.imgDetalleGeneroSerie {
-    width: 100%;
-    height: auto;
+.peliculaPrincipalContenedor {
+    align-items: flex-start;
 }
-/*titulos de index y detalles de genero*/
-.pp,
-.sp,
-.sv,
-.dg {
-    color: white;
-    padding-bottom: 20px ;
-    width: 59%;
-    border-bottom: solid 1px white ;  
+.descripcion {
+    display: none;
 }
+/*estilo secciones peliculas/series */
 
-* {
-    box-sizing: border-box
-}
-
-
-
-/*estilos para celular*/
-@media (max-width: 420px){
-.movieConteiner,
-.serieConteiner,
-.seriesVaoradasConteiner,
-.detalleGeneroPeliContenedor,
-.detalleGeneroSerieContenedor {
+ .conteinerPost {
     flex-direction: column;
     align-items: center;
 }
 
-.movie,
-.series,
-.serieVlorada,
-.detalleGeneroPeli,
-.detalleGeneroSerie {
+.post {
     width: 100%;
     margin: 10px 0;
     
 }
 
-.imgpeli,
-.imgSerie,
-.imgSerieV,
-.imgDetalleGeneroPeli,
-.imgDetalleGeneroSerie {
+.imgPost {
     width: 80%;
     display: block;
     margin: 0 auto;
@@ -356,7 +392,7 @@ footer img{
     margin: 2px;
     text-decoration: none;
     text-align: center;
-}}
+}
 
 /*Login y register*/
 .login{
@@ -407,4 +443,5 @@ footer img{
 
 .info-peliculaSerie h2{
     color: white;
+}
 }
