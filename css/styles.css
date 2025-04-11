@@ -58,7 +58,7 @@ header{
 }
 .imgHeader{
     width: 100%;
-    height: 50%;
+    height: 40%;
 }
 .textTitulo{
     padding-left: 0.5%;
@@ -190,6 +190,7 @@ footer{
     width: 100%;
     height: 15vh;
     align-items: center;
+    margin-bottom: 0;
 }
 .cuerpoGeneros{
     background-color: white;
@@ -339,14 +340,31 @@ footer{
     width: 10%;
     height: 5%;
     margin: 2px;
+    text-decoration: none;
 }
 
 .checkbox{
     color: white;
 }
-.noHay{
-    display: none;
+
+.main-loginRegister{
+    margin-bottom: 100%;
 }
+
+.margin-btn{
+    margin-top: 3px;
+}
+
+/*detalle de peliculas y series*/
+.info-peliculaSerie a{
+    background-color: grey;
+    color: white;
+    width: 10%;
+    height: 5%;
+    text-decoration: none;
+}
+
+
 /*estilos para celular*/
 
 @media (max-width: 420px){
@@ -411,7 +429,11 @@ footer{
     }
     footer{
         width: 100%;
-        height: 10vh;
+        height: 15vh;
+        align-items: center;
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
     }
     .icoRedes img{
         width: 250%;
@@ -530,9 +552,8 @@ footer{
 
 
 /*detalle de peliculas y series*/
-.detalle-peliculaSerie{
-    width: 100%;
-    height: auto;
+.img-peliculaSerie{
+    width: 420px;
 }
 
 .info-peliculaSerie p{
@@ -541,5 +562,22 @@ footer{
 
 .info-peliculaSerie h2{
     color: white;
+}
+
+.info-peliculaSerie a{
+    background-color: grey;
+    color: white;
+    width: 10%;
+    height: 5%;
+    text-decoration: none;
+}
+
+/*Login y register*/
+.main-loginRegister{
+    margin-bottom: 59vh;
+}
+
+.margin-btn{
+    margin-top: 3px;
 }
 }
