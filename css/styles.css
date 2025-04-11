@@ -28,7 +28,7 @@ header{
 }
 .imgHeader{
     width: 6%;
-    height: 25%;
+    height: 30%;
     padding-left:1% ;
 }
 .textTitulo{
@@ -259,7 +259,42 @@ footer img{
     border-bottom: solid 1px #c52020 ;  
 }
 
+/*Login y register*/
+.login{
+    color: white;
+    text-align: center;
+}
 
+.register{
+    color: white;
+    text-align: center;
+}
+
+.formulario-login{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.formulario-register{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.button-formularios{
+    background-color: grey;
+    color: white;
+    width: 10%;
+    height: 5%;
+    margin: 2px;
+}
+
+.checkbox{
+    color: white;
+}
 /*estilos para celular*/
 
 @media (max-width: 420px){
@@ -412,40 +447,4 @@ footer img{
 .info-peliculaSerie h2{
     color: white;
 }
-}
-/*Login y register*/
-.login{
-    color: white;
-    text-align: center;
-}
-
-.register{
-    color: white;
-    text-align: center;
-}
-
-.formulario-login{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.formulario-register{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.button-formularios{
-    background-color: grey;
-    color: white;
-    width: 10%;
-    height: 5%;
-    margin: 2px;
-}
-
-.checkbox{
-    color: white;
 }
