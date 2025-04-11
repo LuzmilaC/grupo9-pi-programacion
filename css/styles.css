@@ -295,6 +295,21 @@ footer img{
 .checkbox{
     color: white;
 }
+
+.main-loginRegister{
+    margin-bottom: 100%;
+}
+
+/*detalle de peliculas y series*/
+.info-peliculaSerie a{
+    background-color: grey;
+    color: white;
+    width: 10%;
+    height: 5%;
+    text-decoration: none;
+}
+
+
 /*estilos para celular*/
 
 @media (max-width: 420px){
@@ -435,7 +450,7 @@ footer img{
 
 
 /*detalle de peliculas y series*/
-.detalle-peliculaSerie{
+.detalle-peliculaSerie, .img-peliculaSerie{
     width: 100%;
     height: auto;
 }
@@ -446,5 +461,13 @@ footer img{
 
 .info-peliculaSerie h2{
     color: white;
+}
+
+.info-peliculaSerie a{
+    background-color: grey;
+    color: white;
+    width: 10%;
+    height: 5%;
+    text-decoration: none;
 }
 }
