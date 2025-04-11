@@ -351,7 +351,9 @@ footer{
 .margin-btn{
     margin-top: 3px;
 }
-
+.noHay{
+    display: none;
+}
 /*detalle de peliculas y series*/
 .info-peliculaSerie a{
     background-color: grey;
