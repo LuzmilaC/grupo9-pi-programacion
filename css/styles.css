@@ -45,7 +45,6 @@ header{
     flex-direction: row;
     width: 100%;
     background-color: white;
-    height: 15vh;
     align-items: center;
     margin-bottom: 4%;
 }
@@ -240,8 +239,23 @@ footer{
     border-color: gray;
     font-weight: bolder;
 }
-.info-peliculaSerie {
+/*detalle de peliculas y series*/
+.infoPeliculaSerie {
     color: white;
+}
+.infoPeliculaSerie a {
+    background-color: grey;
+    color: white;
+    width: 10%;
+    height: 5%;
+    text-decoration: none;
+}
+.detallePeliculaSerie {
+    display: flex;
+    flex-direction: row;
+    display: block;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 /*estilo main de index y detalles de genero*/
@@ -354,14 +368,7 @@ footer{
 .noHay{
     display: none;
 }
-/*detalle de peliculas y series*/
-.info-peliculaSerie a{
-    background-color: grey;
-    color: white;
-    width: 10%;
-    height: 5%;
-    text-decoration: none;
-}
+
 
 
 /*estilos para celular*/
@@ -543,19 +550,28 @@ footer{
 
 
 /*detalle de peliculas y series*/
-.img-peliculaSerie{
-    width: 420px;
+.detallePeliculaSerie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.imgPeliculaSerie{
+    width: 80%;
+    display: block;
+    margin: 0 auto;
 }
 
-.info-peliculaSerie p{
+.infoPeliculaSerie{
+    text-align: center;
+    color: white;
+}  
+
+
+.infoPeliculaSerie h2{
     color: white;
 }
 
-.info-peliculaSerie h2{
-    color: white;
-}
-
-.info-peliculaSerie a{
+.infoPeliculaSerie a{
     background-color: grey;
     color: white;
     width: 10%;
