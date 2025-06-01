@@ -193,15 +193,16 @@ footer{
 }
 .cuerpoGeneros{
     background-color: white;
-    height: 110vh;
+    height: 180vh;
     width: 90%;
     margin-left: 5%;
 }
 .generos{
-    padding-left: 3%;
+    padding-left: 7%;
     display: flex;
     flex-direction: column;
     align-items: start;
+    height: 200vh;
 }
 .generos h2{
     margin-left: 2%;
@@ -295,19 +296,19 @@ footer{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 100%; 
+    width: 100%;
 }
 
 .post {
-    width: 18%;
-    text-align: center;
-    margin: 0 5px;
-    padding-top: 20px;
+  width: 30%;
+  text-align: center;
+  margin: 10px 0;
         
 }
+
 .imgPost {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 /*titulos de index y detalles de genero*/
 .pp,
@@ -367,9 +368,27 @@ footer{
 }
 .noHay{
     display: none;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
 }
-
-
+.cargando {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+  display: none;
+}
+.titGenero { 
+    padding-top: 2%;
+    height: 10%;
+    margin-top: 5%;
+    font-size: 450%;
+    background-color: grey;
+    text-align: center;
+    color: black;
+}
 
 /*estilos para celular*/
 
@@ -482,19 +501,10 @@ footer{
     .cuerpoGeneros{
         margin-top: 5%;
         margin-bottom: 5%;
-        height: 65vh;
+        height: 1400vh;
     }
     .objetosFooter{
         height: 10vh;
-    }
-    .generos h1{
-        font-size: 140%;
-        height: 5vh;
-    }
-    .generos h2{
-        font-size: 80%;
-        height: 5vh;
-
     }
 /*estilo pelicula principal*/
 
