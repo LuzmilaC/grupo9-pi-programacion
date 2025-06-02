@@ -1,4 +1,4 @@
-const url = "https://api.themoviedb.org/3/movie/popular?api_key=2e7092285b99d972d514083dff1b0746";
+const url = "https://api.themoviedb.org/3/movie/now_playing?api_key=2e7092285b99d972d514083dff1b0746";
 let resultados = document.querySelector(".generos");
 let rtas = ""
 const generos = {
@@ -45,7 +45,7 @@ fetch(url)
           }
         }
 
-        if (yaAgregado == false && genero != undefined) {
+        if ((yaAgregado == false) && (genero != undefined)) {
           generosAgregados.push(genero);
           rtas += `<h2><a href="detailMovie-genres.html">${genero}</a></h2>`;
         }

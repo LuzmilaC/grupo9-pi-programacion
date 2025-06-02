@@ -6,7 +6,7 @@
 
 /*Estilos Header y generos*/
 body{
-    background-color: #030303;
+    background-color: black;
     font-family: bebas neue ;
     margin: 0%;
 }
@@ -19,12 +19,16 @@ body{
     list-style: none;
 }
 .listaLogo{
+    margin-left: 2%;
+    margin-right: 2%;
     height: 15vh;
     width: 15%;
     align-items: center;
     list-style: none;
 }
 .textoHeader{
+    margin-left: 0.5%;
+    margin-top: 0.5%;
     height: 15vh;
     width: 10%;
     display: flex;
@@ -33,6 +37,7 @@ body{
     list-style: none;
 }
 .textoHeaderGeneros{
+    margin-top: 0.5%;
     height: 15vh;
     width: 15%;
     display: flex;
@@ -44,7 +49,7 @@ header{
     display: flex;
     flex-direction: row;
     width: 100%;
-    background-color: white;
+    background-color: rgb(146, 146, 146);
     align-items: center;
     margin-bottom: 4%;
 }
@@ -52,12 +57,13 @@ header{
     display: flex;
     flex-direction: row;
     width: 100%;
-    height: 15vh;
+    height: 17vh;
     align-items: center;
 }
 .imgHeader{
     width: 100%;
     height: 40%;
+
 }
 .textTitulo{
     padding-left: 0.5%;
@@ -65,7 +71,7 @@ header{
     display: flex;
     flex-wrap: nowrap; 
     text-decoration: none;
-    color: black;
+    color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 90%;
     display: inline-block;
@@ -84,6 +90,7 @@ header{
     width: 85%;
     height: 100%;
     padding-left:1% ;
+    align-items: center;
 }
 .barraBusqueda{
     width: 25%;
@@ -106,13 +113,13 @@ header{
     border-radius: 10px 0 0 10px;
     font-size: 90%;
     border-style: solid;
-    border-color: rgb(86, 86, 86);
+    border-color:  rgb(75, 75, 75);
     height: 3vh;
   }
 .busqueda button{
     width: 10%;
     border: none;
-    background-color: white;
+    background-color:  rgb(146, 146, 146);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,18 +132,19 @@ header{
     width: 350%;
     height: 3vh;
     border-style: solid;
-    border-color: rgb(54, 53, 53);
-    background-color: rgb(54, 53, 53);
+    border-color: rgb(53, 53, 53);
+    background-color:rgb(53, 53, 53);
 }
 footer{
     margin-top: 4%;
     width: 100%;
-    background-color: white;
+    background-color: rgb(146, 146, 146);
     height: 15vh;
     align-items: center;
 }
 .nombres{
-
+    font-weight: bolder;
+    color: white;
     width: 80%;
     align-items: center;
     justify-content: start;
@@ -151,7 +159,7 @@ footer{
 .textFooter p{
     justify-content: start;
     padding-left: 5%;
-    font-size: 70%;
+    font-size: 80%;
     font-family: Arial, Helvetica, sans-serif;
 }
 .icoRedes img{
@@ -193,7 +201,7 @@ footer{
 }
 .cuerpoGeneros{
     background-color: white;
-    height: 180vh;
+    height: 160vh;
     width: 90%;
     margin-left: 5%;
 }
@@ -202,7 +210,7 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: start;
-    height: 200vh;
+    height: 180vh;
 }
 .generos h2{
     margin-left: 2%;
@@ -239,6 +247,31 @@ footer{
     border-style: solid;
     border-color: gray;
     font-weight: bolder;
+}
+.noHay{
+    display: none;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    margin-top: 20px;
+}
+.cargando {
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+  display: none;
+}
+.titGenero { 
+    margin-bottom: 2%;
+    padding-top: 2%;
+    height: 10%;
+    margin-top: 5%;
+    font-size: 450%;
+    background-color: rgb(76, 76, 76);
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-style: italic;
 }
 /*detalle de peliculas y series*/
 .infoPeliculaSerie {
@@ -366,29 +399,7 @@ footer{
 .margin-btn{
     margin-top: 3px;
 }
-.noHay{
-    display: none;
-    color: white;
-    font-size: 24px;
-    text-align: center;
-    margin-top: 20px;
-}
-.cargando {
-  color: white;
-  text-align: center;
-  font-size: 20px;
-  margin-top: 20px;
-  display: none;
-}
-.titGenero { 
-    padding-top: 2%;
-    height: 10%;
-    margin-top: 5%;
-    font-size: 450%;
-    background-color: grey;
-    text-align: center;
-    color: black;
-}
+
 
 /*estilos para celular*/
 
@@ -501,10 +512,14 @@ footer{
     .cuerpoGeneros{
         margin-top: 5%;
         margin-bottom: 5%;
-        height: 1400vh;
+        height: 130vh;
     }
     .objetosFooter{
         height: 10vh;
+    }
+    .titGenero {
+        height: 10vh;
+        font-size: 300%;
     }
 /*estilo pelicula principal*/
 

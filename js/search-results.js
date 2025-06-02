@@ -1,4 +1,4 @@
-const url = "https://api.themoviedb.org/3/movie/popular?api_key=2e7092285b99d972d514083dff1b0746";
+const url = "https://api.themoviedb.org/3/movie/now_playing?api_key=2e7092285b99d972d514083dff1b0746";
 let resultados = document.querySelector(".containerPost");
 let rtas = ""
 let query = new URLSearchParams(location.search)
