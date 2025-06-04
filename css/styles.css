@@ -186,7 +186,7 @@ footer{
 }
 .cuerpoGeneros{
     background-color: rgb(255, 255, 255);
-    height: 160vh;
+    height: 210vh;
     width: 90%;
     margin-left: 5%;
     border: 1px ;
@@ -224,7 +224,7 @@ footer{
     width: 100%;
     margin-bottom: 2%;
     padding-top: 2%;
-    height: 10%;
+    height: 8%;
     margin-top: 0%;
     font-size: 450%;
     background-color: rgb(50, 50, 50)	;
@@ -476,7 +476,7 @@ footer{
     .cuerpoGeneros{
         margin-top: 5%;
         margin-bottom: 5%;
-        height: 130vh;
+        height: 200vh;
     }
     .objetosFooter{
         height: 10vh;
