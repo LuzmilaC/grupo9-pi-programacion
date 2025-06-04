@@ -22,8 +22,10 @@
             <ul class="barraBusqueda">
                <li class="busqueda">
                 <form action="search-results.html" method="GET">
-                    <input type="text" name="q" value="" >
-                    <button type="submit"><img src="./Imagenes/Logos/Buscar.webp" alt="Busqueda"></button>       
+                    <input type="text" name="q" value=""  placeholder="Buscar...">
+                    <button type="submit"><img src="./Imagenes/Logos/Buscar.webp" alt="Busqueda"></button>  
+                    <label class="radioOpcion"><input type="radio" name="tipo" value="pelicula" ><p class="textOpcion">Pelicula</p></label>
+                    <label class="radioOpcion"><input type="radio" name="tipo" value="serie" ><p class="textOpcion">Series</p></label>                        
                 </form>
                </li>
             </ul>
