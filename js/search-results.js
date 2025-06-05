@@ -1,88 +1,167 @@
-let urlMovie = [
-  "https://api.themoviedb.org/3/search/collection?api_key=2e7092285b99d972d514083dff1b0746",
-  "https://api.themoviedb.org/3/search/company?api_key=2e7092285b99d972d514083dff1b0746",
-  "https://api.themoviedb.org/3/search/keyword?api_key=2e7092285b99d972d514083dff1b0746",
-  "https://api.themoviedb.org/3/search/movie?api_key=2e7092285b99d972d514083dff1b0746",
-  "https://api.themoviedb.org/3/search/multi?api_key=2e7092285b99d972d514083dff1b0746",
-  "https://api.themoviedb.org/3/search/person?api_key=2e7092285b99d972d514083dff1b0746",
-];
-let urlTv = [
-  "https://api.themoviedb.org/3/search/collection?api_key=2e7092285b99d972d514083dff1b0746",
-  "https://api.themoviedb.org/3/search/company?api_key=2e7092285b99d972d514083dff1b0746",
-  "https://api.themoviedb.org/3/search/keyword?api_key=2e7092285b99d972d514083dff1b0746",
-  "https://api.themoviedb.org/3/search/tv?api_key=2e7092285b99d972d514083dff1b0746",
-  "https://api.themoviedb.org/3/search/multi?api_key=2e7092285b99d972d514083dff1b0746",
-  "https://api.themoviedb.org/3/search/person?api_key=2e7092285b99d972d514083dff1b0746",
-];
 let resultados = document.querySelector(".containerPost");
-let rtas = ""
-let tit = ""
-let query = new URLSearchParams(location.search)
-let valor = query.get("q"); // Esta es del form
-let tipo = query.get("tipo");// Esta es del radiobuttom
+let query = new URLSearchParams(location.search);
+let valor = query.get("q");
+let tipo = query.get("tipo");
 let url = [];
 
-if (tipo == "pelicula") {
-  url = urlMovie;
-} else if (tipo == "serie") {
-  url = urlTv;
+
+let urlMovie = `https://api.themoviedb.org/3/search/movie?api_key=2e7092285b99d972d514083dff1b0746&query=${valor}`;
+let urlTv = `https://api.themoviedb.org/3/search/tv?api_key=2e7092285b99d972d514083dff1b0746&query=${valor}`;
+
+
+let rtas = "";
+let validador = [];
+let sinResultados = "si";
+let cargando = document.querySelector(".cargando");
+//Unica forma
+if (cargando != null) {
+  cargando.style.display = "block";
 }
 
-
-verificador =""
-noHay="No"
-document.querySelector(".cargando").style.display = "block";
-validador = [];
-
-for (let a = 0; a < url.length; a++) {
-  fetch(url[a])
-    .then(function(response) {
-      return response.json();
+if (tipo == "pelicula") {
+  fetch(urlMovie)
+    .then(function(respuesta) {
+      return respuesta.json();
     })
     .then(function(data) {
-      console.log(data);
       let result = data.results;
-
+      console.log(result);
+      
       for (let i = 0; i < result.length; i++) {
-        let name = result[i].title;
-        let imagen = result[i].poster_path;
-        let tiempo = result[i].release_date;
-        if (name == valor) {  
-          verificador = "No";
+        let item = result[i];
+        let coincide = false;
+
+        if (item.title == valor) {
+          coincide = true;
+        }
+        if (item.original_title == valor) {
+          coincide = true;
+        }
+        if (item.overview == valor) {
+          coincide = true;
+        }
+        if (item.release_date == valor) {
+          coincide = true;
+        }
+
+        if (coincide == true) {
+          let name = "Sin título";
+          if (item.title != undefined) {
+            name = item.title;
+          }
+
+          let tiempo = "Sin fecha";
+          if (item.release_date != undefined) {
+            tiempo = item.release_date;
+          }
+
+          let imagen = "";
+          if (item.poster_path != undefined) {
+            imagen = item.poster_path;
+          }
+
+          let esta = false;
           for (let j = 0; j < validador.length; j++) {
             if (validador[j] == name) {
-              verificador = "Si";
+              esta = true;
+            }
           }
-          }
-          if (verificador == "No") {
+
+          if (esta == false) {
+            sinResultados = "no"
             validador.push(name);
-            tit = `<h2 class="sp">Resultados de búsqueda: ${valor}</h2>`;
-            rtas += `<article class="post">
-                <a href="./detail-serie.html">
-                  <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}" alt="">
-                </a>
-                <h3 class="titPost">${name}</h3>
-                <p>${tiempo}</p>
-              </article>`;
-            noHay = "Si";
-          }
+            rtas += `
+                <article class="post">
+                    <h3 class="titPost">${name}</h3>
+                    <a href="./detail-serie.html">
+                    <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}" alt="">
+                    </a>
+                    <p>${tiempo}</p>
+                </article>`;
         }
-        }
-
-      document.querySelector(".cargando").style.display = "none";
-      resultados.innerHTML = tit + rtas;
-
-      if (noHay == "No") {
-        document.querySelector(".noHay").style.display = "block";
-        document.querySelector(".sp").style.display = "none";
       }
-    })
-    .catch(function(error) {
-      console.log("Error: " + error);
+      let tit = `<h2 class="tituloBusqueda">Resultados de búsqueda: ${valor}</h2>`;
+      document.querySelector(".busquedaRetas").innerHTML  = tit;
+      resultados.innerHTML = rtas;
       document.querySelector(".cargando").style.display = "none";
+      if (sinResultados == "si") {
+        document.querySelector(".busquedaRetas").style.display = "none";
+        document.querySelector(".noHay").style.display = "block";
+      }
+      }
     });
 }
+if (tipo == "serie") {
+  fetch(urlTv)
+    .then(function(respuesta) {
+      return respuesta.json();
+    })
+    .then(function(data) {
+      let result = data.results;
+      for (let i = 0; i < result.length; i++) {
+        let item = result[i];
+        let coincide = false;
 
+        if (item.name == valor) {
+          coincide = true;
+        }
+        if (item.original_name == valor) {
+          coincide = true;
+        }
+        if (item.overview == valor) {
+          coincide = true;
+        }
+        if (item.first_air_date == valor) {
+          coincide = true;
+        }
+
+        if (coincide == true) {
+          let name = "Sin título";
+          if (item.name != undefined) {
+            name = item.name;
+          }
+
+          let tiempo = "Sin fecha";
+          if (item.first_air_date != undefined) {
+            tiempo = item.first_air_date;
+          }
+
+          let imagen = "";
+          if (item.poster_path != undefined) {
+            imagen = item.poster_path;
+          }
+
+          let esta = false;
+          for (let j = 0; j < validador.length; j++) {
+            if (validador[j] == name) {
+              esta = true;
+            }
+          }
+
+          if (esta == false) {
+            sinResultados = "no"
+            validador.push(name);
+            rtas += `
+                <article class="post">
+                    <h3 class="titPost">${name}</h3>
+                    <a href="./detail-serie.html">
+                    <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}" alt="">
+                    </a>
+                    <p>${tiempo}</p>
+                </article>`;
+          }
+        }
+      }
+      let tit = `<h2 class="tituloBusqueda">Resultados de búsqueda: ${valor}</h2>`;
+      document.querySelector(".busquedaRetas").innerHTML  = tit;
+      resultados.innerHTML = rtas;
+      document.querySelector(".cargando").style.display = "none";
+      if (sinResultados == "si") {
+        document.querySelector(".busquedaRetas").style.display = "none";
+        document.querySelector(".noHay").style.display = "block";
+      }
+    });
+}
 
 window.addEventListener("load", function () {
   let botones = document.querySelectorAll(".textTitulo");
@@ -96,4 +175,4 @@ window.addEventListener("load", function () {
       this.style.color = "";
     });
   }
-});
+})

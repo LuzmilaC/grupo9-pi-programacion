@@ -256,6 +256,13 @@ footer{
     margin-top: 15%;
     margin-bottom: 15%;
 }
+.tituloBusqueda{
+    color: white;
+    padding: 0 0 20px 5px;
+    width: 59%;
+    border: none;
+    border-bottom: 1px solid #c52020;
+}
 .cargando {
    color: white;
    text-align: center;
