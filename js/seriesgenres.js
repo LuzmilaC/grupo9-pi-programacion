@@ -13,7 +13,7 @@ fetch(url)
         let genero = result[i].name;
         let id = result[i].id;
         rtas += `
-        <h2><a href="detailMovie-genres.html?id=${id}">${genero}</a></h2>`;
+        <h2 class="textGenres"><a href="detailMovie-genres.html?id=${id}">${genero}</a></h2>`;
     }
     resultados.innerHTML = rtas;
   })
@@ -30,7 +30,19 @@ window.addEventListener("load", function () {
         });
 
         botones[i].addEventListener("mouseout", function () {
-            this.style.color = ""; // vuelve al color original
+            this.style.color = ""; 
+        });
+    }
+
+    let tit = document.querySelectorAll(".textGenres");
+
+       for (let j = 0; j < tit.length; j++) {
+        tit[j].addEventListener("mouseover", function () {
+            this.style.backgroundColor  = "rgb(180, 180, 180)";
+        });
+
+        tit[j].addEventListener("mouseout", function () {
+            this.style.backgroundColor  = ""; 
         });
     }
 });
