@@ -572,33 +572,12 @@ footer{
 
 
 /*detalle de peliculas y series*/
-.detallePeliculaSerie {
+.detallePeliculaSerie{
+    color: white;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.imgPeliculaSerie{
-    width: 80%;
-    display: block;
-    margin: 0 auto;
-}
-
-.infoPeliculaSerie{
+    margin-top: 70px;
     text-align: center;
-    color: white;
-}  
-
-
-.infoPeliculaSerie h2{
-    color: white;
-}
-
-.infoPeliculaSerie a{
-    background-color: grey;
-    color: white;
-    width: 10%;
-    height: 5%;
-    text-decoration: none;
+    padding: 2px;
 }
 
 /*Login y register*/
@@ -610,3 +589,4 @@ footer{
     margin-top: 3px;
 }
 }
+
