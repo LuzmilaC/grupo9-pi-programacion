@@ -319,14 +319,15 @@ footer{
 }
 
 .mas {
-    background-color: rgba(109, 45, 121, 0.8)
-;
+    background-color: rgba(109, 45, 121, 0.8);
     padding: 7px 20px;
     display: inline-block; 
+    cursor: pointer;
+
 }
 .tt {
     font-size: 4.5rem;
-    color: rgba(109, 45, 121, 0.6)
+    color: rgba(88, 34, 98, 1);
 ;
 }
 

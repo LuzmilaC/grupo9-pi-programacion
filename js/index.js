@@ -10,10 +10,11 @@ let peliculas = document.querySelector(".containerPeliculas")     // para pelíc
 let series = document.querySelector(".containerSeries")           // para series populares
 let seriesValoradas = document.querySelector(".containerSeriesValoradas") // para series valoradas
 
+
 function home(url, contenedor) {
   fetch(url)
     .then(function(response) {
-      return response.json() // convierto la respuesta a JSON
+      return response.json() 
     })
     .then(function(data) {
       console.log(data)
@@ -70,24 +71,6 @@ home(urlPelicula, peliculas)
 home(urlSerie, series)
 home(urlSerieValorada, seriesValoradas)
 
-
-
-//Esto es un estilo para el header (Mandarlo abajo de todo si queres)
-window.addEventListener("load", function () {
-    let botones = document.querySelectorAll(".textTitulo");
-
-    for (let i = 0; i < botones.length; i++) {
-        botones[i].addEventListener("mouseover", function () {
-            this.style.color = "rgb(100, 200, 255)";
-        });
-
-        botones[i].addEventListener("mouseout", function () {
-            this.style.color = ""; 
-        });
-    }
-});
-
-
 ///para la pelicula principal
 let descripcion = document.querySelector(".descripcion");
 let titulo = document.querySelector(".tt");
@@ -107,7 +90,6 @@ descripcion.innerText = data.overview;
   console.log("Error: " + error);
 })
 //boton ver trailer
-
 const boton = document.querySelector(".mas");
 boton.addEventListener( "click" , function() {
   location.href ="https://www.youtube.com/watch?v=JfVOs4VSpmA";
@@ -115,3 +97,17 @@ boton.addEventListener( "click" , function() {
 });
 
 
+//Esto es un estilo para el header (Mandarlo abajo de todo si queres)
+window.addEventListener("load", function () {
+    let botones = document.querySelectorAll(".textTitulo");
+
+    for (let i = 0; i < botones.length; i++) {
+        botones[i].addEventListener("mouseover", function () {
+            this.style.color = "rgb(100, 200, 255)";
+        });
+
+        botones[i].addEventListener("mouseout", function () {
+            this.style.color = ""; 
+        });
+    }
+});

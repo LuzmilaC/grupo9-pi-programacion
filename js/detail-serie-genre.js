@@ -1,36 +1,15 @@
 
-// PASO 1: Leer parámetros de la URL
 const query = location.search;
 const params = new URLSearchParams(query);
 const idGenero = params.get("id");
 
-// PASO 2: Referencias a elementos del HTML
 const apiKey = '6b6cb210c82c48fac559ee907885a2e9';
 const contenedor = document.querySelector("#contenedor-genero");
 const tituloGenero = document.querySelector('#titulo-genero');
+const urlSeries = `https://api.themoviedb.org/3/discover/tv?with_genres=${idGenero}&api_key=${apiKey}`;
 
-// URL para obtener la lista de géneros de series
-const urlGeneros = `https://api.themoviedb.org/3/genre/tv/list?api_key=${apiKey}&language=es-ES`;
-
-let nombreGenero = "";
-
-fetch(urlGeneros)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    let encontrado = "false";
-    for (let i = 0; i < data.genres.length; i++) {
-      if (encontrado!= "true" && data.genres[i].id == idGenero) {
-        nombreGenero = data.genres[i].name;
-        encontrado = "true";
-      }
-    }
-
-    const urlSeries = `https://api.themoviedb.org/3/discover/tv?with_genres=${idGenero}&api_key=${apiKey}`;
-
-    return fetch(urlSeries);
-  })
+   fetch(urlSeries)
+  
   .then(function(response) {
     return response.json();
   })
@@ -38,12 +17,12 @@ fetch(urlGeneros)
     const resultados = data.results;
 
     if (resultados.length > 0) {
-      tituloGenero.innerText = `Resultados de series del género ${nombreGenero}`;
+      tituloGenero.innerText = `${nombreGenero}`;
     } else {
       tituloGenero.innerText = "No se encontraron resultados.";
     }
 
-    contenedor.innerHTML = "";
+    contenido = "";
 
     for (let i = 0; i < resultados.length; i++) {
       const item = resultados[i];
@@ -57,14 +36,16 @@ fetch(urlGeneros)
   }
       contenedor.innerHTML += `
         <article class="post">
-          <a href="detalle-serie.html?id=${item.id}">
+          <a href="./detalle-serie.html?id=${item.id}">
             <img class="imgPost" src="${imagen}" alt="${titulo}">
-            <h3 class="titPost">${titulo}</h3>
           </a>
+           <h3 class="titPost">${titulo}</h3>
         </article>
       `;
     }
   })
+      contenedor.innerHTML = contenido
+
   .catch(function(error) {
     console.error("Error al cargar los datos:", error);
     tituloGenero.innerText = "Ocurrió un error al cargar la página.";
