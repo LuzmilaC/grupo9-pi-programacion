@@ -1,3 +1,9 @@
+function noHay(result) {
+  if (result == 0) {
+    document.querySelector(".busquedaRetas").style.display = "none";
+    document.querySelector(".noHay").style.display = "block";
+  }
+}
 let resultados = document.querySelector(".containerResult");
 let query = new URLSearchParams(location.search);
 let valor = query.get("q");
@@ -8,16 +14,16 @@ let urlTv = `https://api.themoviedb.org/3/search/tv?api_key=2e7092285b99d972d514
 
 let rtas = "";
 let cargando = document.querySelector(".cargando");
-exsite= "no"
+exsite = "no"
 cargando.style.display = "block";
 
 
 if (tipo == "pelicula") {
   fetch(urlMovie)
-    .then(function(respuesta) {
+    .then(function (respuesta) {
       return respuesta.json();
     })
-    .then(function(data) {
+    .then(function (data) {
       let result = data.results;
       console.log(result);
 
@@ -27,7 +33,7 @@ if (tipo == "pelicula") {
         let tiempo = item.release_date;
         let imagen = item.poster_path;
         let id = item.id;
-          rtas += `
+        rtas += `
           <article class="post">
             <h3 class="titPost">${name}</h3>
             <a href="./detail-movie.html">
@@ -41,27 +47,22 @@ if (tipo == "pelicula") {
       document.querySelector(".busquedaRetas").innerHTML = tit;
       resultados.innerHTML = rtas;
       cargando.style.display = "none";
-
-      if (result == 0) {
-        document.querySelector(".busquedaRetas").style.display = "none";
-        document.querySelector(".noHay").style.display = "block";
-      }
+      noHay(result)
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.log("Error: " + error);
     });
 }
 
-if (tipo == "serie") {
+else if (tipo == "serie") {
   fetch(urlTv)
-    .then(function(respuesta) {
+    .then(function (respuesta) {
       return respuesta.json();
     })
-    .then(function(data) {
+    .then(function (data) {
       let result = data.results;
       console.log(result);
 
-      
       for (let i = 0; i < result.length; i++) {
         let item = result[i];
         let name = item.name;
@@ -77,22 +78,16 @@ if (tipo == "serie") {
             <p>${tiempo}</p>
           </article>`;
       }
-
       let tit = `<h2 class="tituloBusqueda">Resultados de búsqueda: ${valor}</h2>`;
       document.querySelector(".busquedaRetas").innerHTML = tit;
       resultados.innerHTML = rtas;
       document.querySelector(".cargando").style.display = "none";
-
-      if (result == 0) {
-        document.querySelector(".busquedaRetas").style.display = "none";
-        document.querySelector(".noHay").style.display = "block";
-      }
+      noHay(result)
     })
-    .catch(function(error) {
+    .catch(function (error) {
       console.log("Error: " + error);
     });
 }
-
 
 window.addEventListener("load", function () {
   let botones = document.querySelectorAll(".textTitulo");
