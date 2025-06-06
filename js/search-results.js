@@ -7,21 +7,26 @@ let urlMovie = `https://api.themoviedb.org/3/search/movie?api_key=2e7092285b99d9
 let urlTv = `https://api.themoviedb.org/3/search/tv?api_key=2e7092285b99d972d514083dff1b0746&query=${valor}`;
 
 let rtas = "";
-let sinResultados = "si";
 let cargando = document.querySelector(".cargando");
-let nombresMostrados = []; 
 exsite= "no"
 cargando.style.display = "block";
 
+//Funcion 
+function estrctura(name,imagen,id,tiempo) {
+  rtas += `
+      <article class="post">
+          <h3 class="titPost">${name}</h3>
+          <a href="./detail-serie.html">
+              <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}?id=${id}" alt="No Hay Imagen">
+          </a>
+          <p>${tiempo}</p>
+          </article>`;
+        
+          return rtas
+}
+
+
 if (tipo == "pelicula") {
-    buscar = [
-    "title",
-    "original_title",
-    "release_date",
-    "original_language",
-    "overview",
-    "id"
-  ];
   fetch(urlMovie)
     .then(function(respuesta) {
       return respuesta.json();
@@ -32,32 +37,11 @@ if (tipo == "pelicula") {
 
       for (let i = 0; i < result.length; i++) {
         let item = result[i];
-
-        for (let j = 0; j < buscar.length; j++) {
-          let campo = buscar[j];
-          if (item[campo] == valor) {
-            let name = item.title;
-            let tiempo = item.release_date;
-            let imagen = item.poster_path;
-            let id = item.id;
-            for (let f = 0; f < nombresMostrados.length; f++)
-              if (nombresMostrados[f] == name) {
-                exsite = "si"
-            }
-          if (exsite=="no") {
-            nombresMostrados.push(name);
-            sinResultados = "no";
-            rtas += `
-              <article class="post">
-                <h3 class="titPost">${name}</h3>
-                <a href="./detail-serie.html">
-                  <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}?id=${id}" alt="No Hay Imagen">
-                </a>
-                <p>${tiempo}</p>
-              </article>`;
-          }
-          }
-        }
+        let name = item.title;
+        let tiempo = item.release_date;
+        let imagen = item.poster_path;
+        let id = item.id;
+        estrctura(name,imagen,id,tiempo)
       }
 
       let tit = `<h2 class="tituloBusqueda">Resultados de búsqueda: ${valor}</h2>`;
@@ -65,7 +49,7 @@ if (tipo == "pelicula") {
       resultados.innerHTML = rtas;
       cargando.style.display = "none";
 
-      if (sinResultados == "si") {
+      if (result == 0) {
         document.querySelector(".busquedaRetas").style.display = "none";
         document.querySelector(".noHay").style.display = "block";
       }
@@ -76,14 +60,6 @@ if (tipo == "pelicula") {
 }
 
 if (tipo == "serie") {
-    buscar = [
-    "name",
-    "original_name",
-    "first_air_date", 
-    "original_language",
-    "overview",
-    "id"
-  ];
   fetch(urlTv)
     .then(function(respuesta) {
       return respuesta.json();
@@ -92,34 +68,14 @@ if (tipo == "serie") {
       let result = data.results;
       console.log(result);
 
+      
       for (let i = 0; i < result.length; i++) {
         let item = result[i];
-
-        for (let j = 0; j < buscar.length; j++) {
-          let campo = buscar[j];
-          if (item[campo] == valor) {
-            let name = item.title;
-            let tiempo = item.release_date;
-            let imagen = item.poster_path;
-            let id = item.id;
-            for (let f = 0; f < nombresMostrados.length; f++)
-              if (nombresMostrados[f] == name) {
-                exsite = "si"
-            }
-          if (exsite=="no") {
-            nombresMostrados.push(name);
-            sinResultados = "no";
-            rtas += `
-              <article class="post">
-                <h3 class="titPost">${name}</h3>
-                <a href="./detail-serie.html">
-                  <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}?id=${id}" alt="No Hay Imagen">
-                </a>
-                <p>${tiempo}</p>
-              </article>`;
-          }
-          }
-        }
+        let name = item.name;
+        let tiempo = item.first_air_date;
+        let imagen = item.poster_path;
+        let id = item.id;
+        estrctura(name,imagen,id,tiempo)
       }
 
       let tit = `<h2 class="tituloBusqueda">Resultados de búsqueda: ${valor}</h2>`;
@@ -127,7 +83,7 @@ if (tipo == "serie") {
       resultados.innerHTML = rtas;
       document.querySelector(".cargando").style.display = "none";
 
-      if (sinResultados == "si") {
+      if (result == 0) {
         document.querySelector(".busquedaRetas").style.display = "none";
         document.querySelector(".noHay").style.display = "block";
       }
