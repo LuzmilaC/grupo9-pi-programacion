@@ -39,6 +39,7 @@ if (tipo == "pelicula") {
             let name = item.title;
             let tiempo = item.release_date;
             let imagen = item.poster_path;
+            let id = item.id;
             for (let f = 0; f < nombresMostrados.length; f++)
               if (nombresMostrados[f] == name) {
                 exsite = "si"
@@ -50,7 +51,7 @@ if (tipo == "pelicula") {
               <article class="post">
                 <h3 class="titPost">${name}</h3>
                 <a href="./detail-serie.html">
-                  <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}" alt="No">
+                  <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}?id=${id}" alt="No Hay Imagen">
                 </a>
                 <p>${tiempo}</p>
               </article>`;
@@ -99,6 +100,7 @@ if (tipo == "serie") {
             let name = item.title;
             let tiempo = item.release_date;
             let imagen = item.poster_path;
+            let id = item.id;
             for (let f = 0; f < nombresMostrados.length; f++)
               if (nombresMostrados[f] == name) {
                 exsite = "si"
@@ -110,7 +112,7 @@ if (tipo == "serie") {
               <article class="post">
                 <h3 class="titPost">${name}</h3>
                 <a href="./detail-serie.html">
-                  <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}" alt="No">
+                  <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}?id=${id}" alt="No Hay Imagen">
                 </a>
                 <p>${tiempo}</p>
               </article>`;

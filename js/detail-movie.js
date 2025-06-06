@@ -13,7 +13,7 @@ window.addEventListener("load", function () {
         });
 
         botones[i].addEventListener("mouseout", function () {
-            this.style.color = ""; // vuelve al color original
+            this.style.color = ""; 
         });
     }
 });

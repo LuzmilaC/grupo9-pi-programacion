@@ -202,7 +202,7 @@ footer{
 }
 .cuerpoGeneros{
     background-color: rgb(255, 255, 255);
-    height: 205vh;
+    height: 190vh;
     width: 90%;
     margin-left: 5%;
     border: 1px ;
@@ -216,12 +216,12 @@ footer{
     align-items: start;
     height: 180vh;
 }
-.generos h2{
+.textGenres{
     margin-left: 2%;
     padding-left: 1.5%;
     display: flex;
     align-items: center; 
-    height: 7vh;
+    height: 5vh;
     width: 90%;
     background: rgb(255, 255, 255);
     font-size: 130%;
@@ -312,13 +312,15 @@ footer{
 }
 
 .mas {
-    background-color: rgba(197, 32, 32, 0.8);
+    background-color: rgba(109, 45, 121, 0.8)
+;
     padding: 7px 20px;
     display: inline-block; 
 }
 .tt {
     font-size: 4.5rem;
-    color: rgba(197, 32, 32, 0.6);
+    color: rgba(109, 45, 121, 0.6)
+;
 }
 
 /*estilos posts de peliculas-series*/
@@ -332,7 +334,7 @@ footer{
 }
 
 .post {
-  width: 30%;
+  width: 18%;
   text-align: center;
   margin: 10px 0;
         
@@ -350,7 +352,7 @@ footer{
     color: white;
     padding: 0 0 20px 5px  ;
     width: 59%;
-    border-bottom: solid 1px #c52020 ;  
+    border-bottom: solid 1px rgb(109, 45, 121) ;  
 }
 
 /*Login y register*/
@@ -507,7 +509,7 @@ footer{
     .cuerpoGeneros{
         margin-top: 5%;
         margin-bottom: 5%;
-        height:195vh;
+        height:160vh;
     }
     .objetosFooter{
         height: 10vh;
