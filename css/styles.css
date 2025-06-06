@@ -271,7 +271,14 @@ footer{
    display: none;
    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
+.containerResult{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    }
 /*detalle de peliculas y series*/
 .infoPeliculaSerie {
     color: white;

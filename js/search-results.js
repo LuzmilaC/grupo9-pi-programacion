@@ -1,4 +1,4 @@
-let resultados = document.querySelector(".containerPost");
+let resultados = document.querySelector(".containerResult");
 let query = new URLSearchParams(location.search);
 let valor = query.get("q");
 let tipo = query.get("tipo");
@@ -11,7 +11,7 @@ let sinResultados = "si";
 let cargando = document.querySelector(".cargando");
 let nombresMostrados = []; 
 exsite= "no"
-
+cargando.style.display = "block";
 
 if (tipo == "pelicula") {
     buscar = [
@@ -63,7 +63,7 @@ if (tipo == "pelicula") {
       let tit = `<h2 class="tituloBusqueda">Resultados de búsqueda: ${valor}</h2>`;
       document.querySelector(".busquedaRetas").innerHTML = tit;
       resultados.innerHTML = rtas;
-      document.querySelector(".cargando").style.display = "none";
+      cargando.style.display = "none";
 
       if (sinResultados == "si") {
         document.querySelector(".busquedaRetas").style.display = "none";
