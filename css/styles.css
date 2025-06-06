@@ -261,7 +261,7 @@ footer{
     padding: 0 0 20px 5px;
     width: 59%;
     border: none;
-    border-bottom: 1px solid #c52020;
+    border-bottom: 1px solid rgb(109, 45, 121);
 }
 .cargando {
    color: white;
@@ -271,7 +271,14 @@ footer{
    display: none;
    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
-
+.containerResult{
+    color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    }
 /*detalle de peliculas y series*/
 .infoPeliculaSerie {
     color: white;
