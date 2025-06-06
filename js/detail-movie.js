@@ -1,3 +1,8 @@
+
+
+
+
+
 //Esto es un estilo para el header (Mandarlo abajo de todo si queres)
 window.addEventListener("load", function () {
     let botones = document.querySelectorAll(".textTitulo");
