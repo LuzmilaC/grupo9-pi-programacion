@@ -11,20 +11,6 @@ let cargando = document.querySelector(".cargando");
 exsite= "no"
 cargando.style.display = "block";
 
-//Funcion 
-function estrctura(name,imagen,id,tiempo) {
-  rtas += `
-      <article class="post">
-          <h3 class="titPost">${name}</h3>
-          <a href="./detail-serie.html">
-              <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}?id=${id}" alt="No Hay Imagen">
-          </a>
-          <p>${tiempo}</p>
-          </article>`;
-        
-          return rtas
-}
-
 
 if (tipo == "pelicula") {
   fetch(urlMovie)
@@ -41,7 +27,14 @@ if (tipo == "pelicula") {
         let tiempo = item.release_date;
         let imagen = item.poster_path;
         let id = item.id;
-        estrctura(name,imagen,id,tiempo)
+          rtas += `
+          <article class="post">
+            <h3 class="titPost">${name}</h3>
+            <a href="./detail-movie.html">
+              <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}?id=${id}" alt="No Hay Imagen">
+            </a>
+            <p>${tiempo}</p>
+          </article>`;
       }
 
       let tit = `<h2 class="tituloBusqueda">Resultados de búsqueda: ${valor}</h2>`;
@@ -75,7 +68,14 @@ if (tipo == "serie") {
         let tiempo = item.first_air_date;
         let imagen = item.poster_path;
         let id = item.id;
-        estrctura(name,imagen,id,tiempo)
+        rtas += `
+          <article class="post">
+            <h3 class="titPost">${name}</h3>
+            <a href="./detail-serie.html">
+              <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}?id=${id}" alt="No Hay Imagen">
+            </a>
+            <p>${tiempo}</p>
+          </article>`;
       }
 
       let tit = `<h2 class="tituloBusqueda">Resultados de búsqueda: ${valor}</h2>`;
