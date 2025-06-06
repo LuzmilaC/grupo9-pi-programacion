@@ -296,6 +296,9 @@ footer{
     display: block;
     align-items: flex-start;
     justify-content: center;
+    color: white;
+    text-align: center;
+    margin: 5px;
 }
 
 /*estilo main de index y detalles de genero*/
@@ -586,6 +589,7 @@ footer{
     margin-top: 70px;
     text-align: center;
     padding: 2px;
+    
 }
 
 /*Login y register*/

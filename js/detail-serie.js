@@ -7,17 +7,16 @@ console.log(objQuery.get('id')); //solo para chequear; te imprime el valor
 let idSerie = objQuery.get('id');
 
 let APIkey = "2e7092285b99d972d514083dff1b0746";
-const urlDet=`https://api.themoviedb.org/3/tv/${idserie}?api_key=${APIkey}`;
+let urlDet=`https://api.themoviedb.org/3/tv/${idSerie}?api_key=${APIkey}`;
 
 //recuperar elementos del dom
 let imagen = document.querySelector(".imagen");
 let titulo = document.querySelector(".titulo");
 let calificacion = document.querySelector(".calificacion");
 let fecha = document.querySelector(".fecha");
-let duracion = document.querySelector(".duracion");
 let sinopsis = document.querySelector(".sinopsis");
 let genero = document.querySelector(".genero");
-let baseImg="/tRMEuYNVFjXYJ7gh1sGJSxq9Vwq.jpg";
+let baseImg="https://image.tmdb.org/t/p/w500";
 
 fetch(urlDet)
     .then(function(response){
@@ -26,10 +25,9 @@ fetch(urlDet)
     .then(function(data){
         console.log(data);
         imagen.src = `${baseImg}/${data.poster_path}`;
-        titulo.innerText = `Titulo: ${data.original_title}`;
+        titulo.innerText = `Titulo: ${data.name}`;
         calificacion.innerText = `Calificacion: ${data.vote_average}`;
-        fecha.innerText = `Fecha de estreno: ${data.release_date}`;
-        duracion.innerText = `Duración: ${data.runtime}`;
+        fecha.innerText = `Fecha de estreno: ${data.first_air_date}`;
         sinopsis.innerText = `Sinopsis: ${data.overview}`;
   
         let nombreGeneros = "";
@@ -45,11 +43,7 @@ fetch(urlDet)
         console.log("El error es: " + error);
     });
 
-
-
-
-
-
+    
 
 
 

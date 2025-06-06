@@ -7,7 +7,7 @@ console.log(objQuery.get('id')); //solo para chequear; te imprime el valor
 let idPelicula = objQuery.get('id');
 
 let APIkey = "2e7092285b99d972d514083dff1b0746";
-const urlDet=`https://api.themoviedb.org/3/movie/552524?api_key=${APIkey}`;
+const urlDet=`https://api.themoviedb.org/3/movie/${idPelicula}?api_key=${APIkey}`;
 
 //recuperar elementos del dom
 let imagen = document.querySelector(".imagen");
