@@ -261,7 +261,7 @@ footer{
     padding: 0 0 20px 5px;
     width: 59%;
     border: none;
-    border-bottom: 1px solid #c52020;
+    border-bottom: 1px solid rgb(109, 45, 121);
 }
 .cargando {
    color: white;

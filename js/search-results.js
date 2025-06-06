@@ -5,7 +5,6 @@ let tipo = query.get("tipo");
 let url = [];
 let urlMovie = `https://api.themoviedb.org/3/search/movie?api_key=2e7092285b99d972d514083dff1b0746&query=${valor}`;
 let urlTv = `https://api.themoviedb.org/3/search/tv?api_key=2e7092285b99d972d514083dff1b0746&query=${valor}`;
-urlTv
 
 let rtas = "";
 let sinResultados = "si";
@@ -20,7 +19,8 @@ if (tipo == "pelicula") {
     "original_title",
     "release_date",
     "original_language",
-    "overview"
+    "overview",
+    "id"
   ];
   fetch(urlMovie)
     .then(function(respuesta) {
@@ -81,7 +81,8 @@ if (tipo == "serie") {
     "original_name",
     "first_air_date", 
     "original_language",
-    "overview"
+    "overview",
+    "id"
   ];
   fetch(urlTv)
     .then(function(respuesta) {
