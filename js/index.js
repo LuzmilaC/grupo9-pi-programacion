@@ -11,12 +11,8 @@ let peliculas = document.querySelector(".containerPeliculas")     // para pelíc
 let series = document.querySelector(".containerSeries")           // para series populares
 let seriesValoradas = document.querySelector(".containerSeriesValoradas") // para series valoradas
 
-<<<<<<< HEAD
 
-function home(url, contenedor) {
-=======
 function home(url, contenedor,tipo) {
->>>>>>> 375612f (hice detalles y realice cambio en index.js)
   fetch(url)
     .then(function(response) {
       return response.json() 

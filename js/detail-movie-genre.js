@@ -8,7 +8,7 @@ let contenedor = document.querySelector("#contenedor-genero");
 let tituloGenero = document.querySelector('#titulo-genero');
 let urlPeliculas = `https://api.themoviedb.org/3/discover/movie?with_genres=${idGenero}&api_key=${apiKey}`;
 
-    fetch(urlPeliculas)
+fetch(urlPeliculas)
   .then(function(response) {
     return response.json();
   })

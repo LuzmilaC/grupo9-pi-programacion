@@ -39,7 +39,7 @@ fetch(url)
             let genero = result[i].name;
             let id = result[i].id;
             rtas += `
-        <h2 class="textGenres"><a href="detailSerie-genres.html?id=${id}">${genero}</a></h2>`;
+            <h2 class="textGenres"><a href="detailSerie-genres.html?id=${id}&nombreGenero=${genero}">${genero}</a></h2>`;
         }
         resultados.innerHTML = rtas;
     })

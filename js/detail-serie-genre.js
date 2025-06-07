@@ -1,15 +1,14 @@
+let query = location.search;
+let params = new URLSearchParams(query);
+let idGenero = params.get("id");
+let nombreGenero  = params.get("nombreGenero");
 
-const query = location.search;
-const params = new URLSearchParams(query);
-const idGenero = params.get("id");
+let apiKey = '6b6cb210c82c48fac559ee907885a2e9';
+let contenedor = document.querySelector("#contenedor-genero");
+let tituloGenero = document.querySelector('#titulo-genero');
+let urlSeries = `https://api.themoviedb.org/3/discover/tv?with_genres=${idGenero}&api_key=${apiKey}`;
 
-const apiKey = '6b6cb210c82c48fac559ee907885a2e9';
-const contenedor = document.querySelector("#contenedor-genero");
-const tituloGenero = document.querySelector('#titulo-genero');
-const urlSeries = `https://api.themoviedb.org/3/discover/tv?with_genres=${idGenero}&api_key=${apiKey}`;
-
-   fetch(urlSeries)
-  
+fetch(urlSeries)
   .then(function(response) {
     return response.json();
   })
@@ -22,30 +21,31 @@ const urlSeries = `https://api.themoviedb.org/3/discover/tv?with_genres=${idGene
       tituloGenero.innerText = "No se encontraron resultados.";
     }
 
-    contenido = "";
+    let contenido = "";
 
     for (let i = 0; i < resultados.length; i++) {
       const item = resultados[i];
       let titulo = item.name;
-      let imagen = " "
+      let imagen = "";
 
       if (item.poster_path) {
-    imagen = "https://image.tmdb.org/t/p/w300" + item.poster_path;
-  } else {
-    imagen = "imagen-no-disponible.jpg";
-  }
-      contenedor.innerHTML += `
+        imagen = "https://image.tmdb.org/t/p/w300" + item.poster_path;
+      } else {
+        imagen = "imagen-no-disponible.jpg";
+      }
+
+      contenido += `
         <article class="post">
           <a href="./detalle-serie.html?id=${item.id}">
             <img class="imgPost" src="${imagen}" alt="${titulo}">
           </a>
-           <h3 class="titPost">${titulo}</h3>
+          <h3 class="titPost">${titulo}</h3>
         </article>
       `;
     }
-  })
-      contenedor.innerHTML = contenido
 
+    contenedor.innerHTML = contenido;
+  })
   .catch(function(error) {
     console.error("Error al cargar los datos:", error);
     tituloGenero.innerText = "Ocurrió un error al cargar la página.";
