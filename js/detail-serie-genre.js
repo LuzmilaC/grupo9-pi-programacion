@@ -1,12 +1,12 @@
-let query = location.search;
-let params = new URLSearchParams(query);
-let idGenero = params.get("id");
-let nombreGenero  = params.get("nombreGenero");
+const query = location.search;
+const params = new URLSearchParams(query);
+const idGenero = params.get("id");
+const nombreGenero  = params.get("nombreGenero");
 
-let apiKey = '6b6cb210c82c48fac559ee907885a2e9';
-let contenedor = document.querySelector("#contenedor-genero");
-let tituloGenero = document.querySelector('#titulo-genero');
-let urlSeries = `https://api.themoviedb.org/3/discover/tv?with_genres=${idGenero}&api_key=${apiKey}`;
+const apiKey = '6b6cb210c82c48fac559ee907885a2e9';
+const contenedor = document.querySelector("#contenedor-genero");
+const tituloGenero = document.querySelector('#titulo-genero');
+const urlSeries = `https://api.themoviedb.org/3/discover/tv?with_genres=${idGenero}&api_key=${apiKey}`;
 
 fetch(urlSeries)
   .then(function(response) {
@@ -35,7 +35,7 @@ fetch(urlSeries)
       }
       contenido += `
         <article class="post">
-          <a href="./detalle-serie.html?id=${item.id}">
+           <a href="./detail-serie.html?id=${item.id}">
             <img class="imgPost" src="${imagen}" alt="${titulo}">
           </a>
           <h3 class="titPost">${titulo}</h3>
@@ -50,18 +50,16 @@ fetch(urlSeries)
     console.error("Error al cargar los datos:", error);
     tituloGenero.innerText = "Ocurrió un error al cargar la página.";
   });
+  window.addEventListener("load", function () {
+    let botones = document.querySelectorAll(".textTitulo");
 
-//Esto es un estilo para el header (Mandarlo abajo de todo si queres)
-window.addEventListener("load", function () {
-  let botones = document.querySelectorAll(".textTitulo");
+    for (let i = 0; i < botones.length; i++) {
+        botones[i].addEventListener("mouseover", function () {
+            this.style.color = "rgb(100, 200, 255)";
+        });
 
-  for (let i = 0; i < botones.length; i++) {
-    botones[i].addEventListener("mouseover", function () {
-      this.style.color = "rgb(100, 200, 255)";
-    });
-
-    botones[i].addEventListener("mouseout", function () {
-      this.style.color = "";
-    });
-  }
+        botones[i].addEventListener("mouseout", function () {
+            this.style.color = ""; 
+        });
+    }
 });

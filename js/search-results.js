@@ -36,8 +36,8 @@ if (tipo == "pelicula") {
         rtas += `
           <article class="post">
             <h3 class="titPost">${name}</h3>
-            <a href="./detail-movie.html">
-              <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}?id=${id}" alt="No Hay Imagen">
+            <a href="./detail-movie.html?id=${id}">
+             <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}" alt="No Hay Imagen">
             </a>
             <p>${tiempo}</p>
           </article>`;
@@ -72,9 +72,10 @@ else if (tipo == "serie") {
         rtas += `
           <article class="post">
             <h3 class="titPost">${name}</h3>
-            <a href="./detail-serie.html">
-              <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}?id=${id}" alt="No Hay Imagen">
+            <a href="./detail-serie.html?id=${id}">
+             <img class="imgPost" src="https://image.tmdb.org/t/p/w500${imagen}" alt="No Hay Imagen">
             </a>
+
             <p>${tiempo}</p>
           </article>`;
       }
