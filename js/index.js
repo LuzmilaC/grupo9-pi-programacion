@@ -12,7 +12,7 @@ let series = document.querySelector(".containerSeries")           // para series
 let seriesValoradas = document.querySelector(".containerSeriesValoradas") // para series valoradas
 
 
-function home(url, contenedor, tipoDetalle) {
+function home(url, contenedor,tipo) {
   fetch(url)
     .then(function(response) {
       return response.json() 
