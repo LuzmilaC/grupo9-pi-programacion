@@ -5,18 +5,14 @@ const urlPelicula = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey
 const urlSerie = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}`
 
 const urlSerieValorada = `https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}`
-const urlpeli="./detail-movie.html";
-const urlserie="./detail-serie.html"
+const urlpeli="./detail-movie";
+const urlserie="./detail-serie";
 let peliculas = document.querySelector(".containerPeliculas")     // para películas
 let series = document.querySelector(".containerSeries")           // para series populares
 let seriesValoradas = document.querySelector(".containerSeriesValoradas") // para series valoradas
 
-<<<<<<< HEAD
 
-function home(url, contenedor) {
-=======
-function home(url, contenedor,tipo) {
->>>>>>> 375612f (hice detalles y realice cambio en index.js)
+function home(url, contenedor, tipoDetalle) {
   fetch(url)
     .then(function(response) {
       return response.json() 
@@ -55,7 +51,7 @@ function home(url, contenedor,tipo) {
 
         acumuladora += `
           <article class="post">
-            <a href="${tipo}?id=${item.id}">
+            <a href="./${tipoDetalle}.html?id=${item.id}">
               <img class="imgPost" src="${imagen}" alt="${titulo}">
             </a>
             <h3 class="titPost">${titulo}</h3>

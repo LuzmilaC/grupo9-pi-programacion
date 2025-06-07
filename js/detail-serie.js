@@ -7,7 +7,7 @@ console.log(objQuery.get('id')); //solo para chequear; te imprime el valor
 let idSerie = objQuery.get('id');
 
 let APIkey = "2e7092285b99d972d514083dff1b0746";
-let urlDet=`https://api.themoviedb.org/3/tv/${idSerie}?api_key=${APIkey}`;
+let urlDet = `https://api.themoviedb.org/3/tv/${idSerie}?api_key=${APIkey}`;
 
 //recuperar elementos del dom
 let imagen = document.querySelector(".imagen");
@@ -16,34 +16,34 @@ let calificacion = document.querySelector(".calificacion");
 let fecha = document.querySelector(".fecha");
 let sinopsis = document.querySelector(".sinopsis");
 let genero = document.querySelector(".genero");
-let baseImg="https://image.tmdb.org/t/p/w500";
+let baseImg = "https://image.tmdb.org/t/p/w500";
 
 fetch(urlDet)
-    .then(function(response){
+    .then(function (response) {
         return response.json();
     })
-    .then(function(data){
+    .then(function (data) {
         console.log(data);
         imagen.src = `${baseImg}/${data.poster_path}`;
         titulo.innerText = `Titulo: ${data.name}`;
         calificacion.innerText = `Calificacion: ${data.vote_average}`;
         fecha.innerText = `Fecha de estreno: ${data.first_air_date}`;
         sinopsis.innerText = `Sinopsis: ${data.overview}`;
-  
+
         let nombreGeneros = "";
         for (let i = 0; i < data.genres.length; i++) {
             nombreGeneros += data.genres[i].name;
             if (i < data.genres.length - 1) {
                 nombreGeneros += ", ";
-        }
+            }
         }
         genero.innerText = `Género: ${nombreGeneros}`;
     })
-    .catch(function(error){
+    .catch(function (error) {
         console.log("El error es: " + error);
     });
 
-    
+
 
 
 
@@ -57,7 +57,7 @@ window.addEventListener("load", function () {
         });
 
         botones[i].addEventListener("mouseout", function () {
-            this.style.color = ""; 
+            this.style.color = "";
         });
     }
 });

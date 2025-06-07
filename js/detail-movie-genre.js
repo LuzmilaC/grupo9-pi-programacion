@@ -1,18 +1,18 @@
-let query = location.search;
-let params = new URLSearchParams(query);
-let idGenero = params.get("id");
-let nombreGenero  = params.get("nombreGenero");
+const query = location.search;
+const params = new URLSearchParams(query);
+const idGenero = params.get("id");
+const nombreGenero = params.get("nombreGenero");
 
-let apiKey = '6b6cb210c82c48fac559ee907885a2e9';
-let contenedor = document.querySelector("#contenedor-genero");
-let tituloGenero = document.querySelector('#titulo-genero');
-let urlPeliculas = `https://api.themoviedb.org/3/discover/movie?with_genres=${idGenero}&api_key=${apiKey}`;
+const apiKey = '6b6cb210c82c48fac559ee907885a2e9';
+const contenedor = document.querySelector("#contenedor-genero");
+const tituloGenero = document.querySelector('#titulo-genero');
+const urlPeliculas = `https://api.themoviedb.org/3/discover/movie?with_genres=${idGenero}&api_key=${apiKey}`;
 
-    fetch(urlPeliculas)
-  .then(function(response) {
+fetch(urlPeliculas)
+  .then(function (response) {
     return response.json();
   })
-  .then(function(data) {
+  .then(function (data) {
     let resultados = data.results;
 
     if (resultados.length > 0) {
@@ -26,13 +26,13 @@ let urlPeliculas = `https://api.themoviedb.org/3/discover/movie?with_genres=${id
     for (let i = 0; i < resultados.length; i++) {
       let item = resultados[i];
       let titulo = item.title;
-       let imagen = "";
+      let imagen = "";
 
       if (item.poster_path) {
-    imagen = "https://image.tmdb.org/t/p/w300" + item.poster_path;
-  } else {
-    imagen = "imagen-no-disponible.jpg";
-  }
+        imagen = "https://image.tmdb.org/t/p/w300" + item.poster_path;
+      } else {
+        imagen = "imagen-no-disponible.jpg";
+      }
 
       contenido += `
         <article class="post">
@@ -46,7 +46,7 @@ let urlPeliculas = `https://api.themoviedb.org/3/discover/movie?with_genres=${id
 
     contenedor.innerHTML = contenido
   })
-  .catch(function(error) {
+  .catch(function (error) {
     console.error("Error al cargar los datos:", error);
     tituloGenero.innerText = "Ocurrió un error al cargar la página.";
   });
@@ -55,15 +55,15 @@ let urlPeliculas = `https://api.themoviedb.org/3/discover/movie?with_genres=${id
 
 //Esto es un estilo para el header (Mandarlo abajo de todo si queres)
 window.addEventListener("load", function () {
-    let botones = document.querySelectorAll(".textTitulo");
+  let botones = document.querySelectorAll(".textTitulo");
 
-    for (let i = 0; i < botones.length; i++) {
-        botones[i].addEventListener("mouseover", function () {
-            this.style.color = "rgb(100, 200, 255)";
-        });
+  for (let i = 0; i < botones.length; i++) {
+    botones[i].addEventListener("mouseover", function () {
+      this.style.color = "rgb(100, 200, 255)";
+    });
 
-        botones[i].addEventListener("mouseout", function () {
-            this.style.color = ""; 
-        });
-    }
+    botones[i].addEventListener("mouseout", function () {
+      this.style.color = "";
+    });
+  }
 });
