@@ -1,55 +1,55 @@
 const apiKey = "6b6cb210c82c48fac559ee907885a2e9"
 
 const urlPelicula = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}`
-
 const urlSerie = `https://api.themoviedb.org/3/tv/popular?api_key=${apiKey}`
-
 const urlSerieValorada = `https://api.themoviedb.org/3/tv/top_rated?api_key=${apiKey}`
-const urlpeli="./detail-movie";
-const urlserie="./detail-serie";
-let peliculas = document.querySelector(".containerPeliculas")     // para películas
-let series = document.querySelector(".containerSeries")           // para series populares
-let seriesValoradas = document.querySelector(".containerSeriesValoradas") // para series valoradas
+
+const urlpeli = "./detail-movie";
+const urlserie = "./detail-serie";
+
+const peliculas = document.querySelector(".containerPeliculas")     // para películas
+const series = document.querySelector(".containerSeries")           // para series populares
+const seriesValoradas = document.querySelector(".containerSeriesValoradas") // para series valoradas
 
 
-function home(url, contenedor,tipo) {
-  fetch(url)
-    .then(function(response) {
-      return response.json() 
-    })
-    .then(function(data) {
-      console.log(data)
+function home(url, contenedor, tipoDetalle) {
+    fetch(url)
+        .then(function (response) {
+            return response.json()
+        })
+        .then(function (data) {
+            console.log(data)
 
-      let acumuladora = ""
+            let acumuladora = "";
 
-      for (let i = 0; i < data.results.length && i < 5; i++) {
-        const item = data.results[i]
+            for (let i = 0; i < data.results.length && i < 5; i++) {
+                const item = data.results[i]
 
-        let imagen = "";
+                let imagen = "";
 
-        if (item.poster_path) {
-          imagen = "https://image.tmdb.org/t/p/w300" + item.poster_path;
-        } else {
-          imagen = "imagen-no-disponible.jpg";
-        }
+                if (item.poster_path) {
+                    imagen = "https://image.tmdb.org/t/p/w300" + item.poster_path;
+                } else {
+                    imagen = "imagen-no-disponible.jpg";
+                }
 
-        let titulo = "";
+                let titulo = "";
 
-        if (item.title) {
-          titulo = item.title;
-        } else {
-          titulo = item.name;
-        }
+                if (item.title) {
+                    titulo = item.title;
+                } else {
+                    titulo = item.name;
+                }
 
-        let fecha = "";
+                let fecha = "";
 
-        if (item.release_date) {
-          fecha = item.release_date;
-        } else {
-          fecha = item.first_air_date;
-        }
+                if (item.release_date) {
+                    fecha = item.release_date;
+                } else {
+                    fecha = item.first_air_date;
+                }
 
-        acumuladora += `
+                acumuladora += `
           <article class="post">
             <a href="./${tipoDetalle}.html?id=${item.id}">
               <img class="imgPost" src="${imagen}" alt="${titulo}">
@@ -57,43 +57,43 @@ function home(url, contenedor,tipo) {
             <h3 class="titPost">${titulo}</h3>
             <p>${fecha}</p>
           </article>`
-      }
+            }
 
-      contenedor.innerHTML = acumuladora
-    })
-    .catch(function(error) {
+            contenedor.innerHTML = acumuladora
+        })
+        .catch(function (error) {
 
-      console.log("Error: " + error)
-      contenedor.innerHTML = "<p>Error al cargar los datos</p>";
-    })
+            console.log("Error: " + error)
+            contenedor.innerHTML = "<p>Error al cargar los datos</p>";
+        })
 }
 
-home(urlPelicula, peliculas,urlpeli)
-home(urlSerie, series,urlserie)
-home(urlSerieValorada, seriesValoradas,urlserie)
+home(urlPelicula, peliculas, urlpeli)
+home(urlSerie, series, urlserie)
+home(urlSerieValorada, seriesValoradas, urlserie)
 
 ///para la pelicula principal
-let descripcion = document.querySelector(".descripcion");
-let titulo = document.querySelector(".tt");
+const descripcion = document.querySelector(".descripcion");
+const titulo = document.querySelector(".tt");
 
-const urlDetalle = `https://api.themoviedb.org/3/movie/634649?api_key=${apiKey}&language=es-ES` 
+const urlDetalle = `https://api.themoviedb.org/3/movie/634649?api_key=${apiKey}&language=es-ES`
 
 fetch(urlDetalle)
-.then(function(response) {
-  return response.json();
-})
-.then(function(data) {
- titulo.innerText = data.title;
-descripcion.innerText = data.overview;
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        titulo.innerText = data.title;
+        descripcion.innerText = data.overview;
 
-})
-.catch(function(error) {
-  console.log("Error: " + error);
-})
+    })
+    .catch(function (error) {
+        console.log("Error: " + error);
+    })
 //boton ver trailer
 const boton = document.querySelector(".mas");
-boton.addEventListener( "click" , function() {
-  location.href ="https://www.youtube.com/watch?v=JfVOs4VSpmA";
+boton.addEventListener("click", function () {
+    location.href = "https://www.youtube.com/watch?v=JfVOs4VSpmA";
 
 });
 
@@ -108,7 +108,7 @@ window.addEventListener("load", function () {
         });
 
         botones[i].addEventListener("mouseout", function () {
-            this.style.color = ""; 
+            this.style.color = "";
         });
     }
 });
