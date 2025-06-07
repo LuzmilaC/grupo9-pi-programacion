@@ -36,7 +36,7 @@ fetch(urlSeries)
 
       contenido += `
         <article class="post">
-          <a href="./detalle-serie.html?id=${item.id}">
+           <a href="./detail-serie.html?id=${item.id}">
             <img class="imgPost" src="${imagen}" alt="${titulo}">
           </a>
           <h3 class="titPost">${titulo}</h3>
